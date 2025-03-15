@@ -2,13 +2,17 @@
   {
       "id": 1,
       "name": "Karina",
-      "email": "Karina@example.com",
-      "subs": "Premium"
+      "todostitle": "delectus",
+      "status": "Not Finished",
+      "posttitle": "qui est ease",
+      "posttext": "qui est esse"
   },
   {
       "id": 2,
       "name": "Taufik",
-      "email": "taufik@example.com",
-      "subs": "Basic"
+      "todostitle": "delectus",
+      "status": "Done",
+      "posttitle": "qui est jufgr ddsa",
+      "posttext": "qui est oksjdl"
   }
 ]

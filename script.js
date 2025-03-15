@@ -12,14 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('customerForm').addEventListener('submit', (e) => {
         e.preventDefault();
-        const name = document.getElementById('customerName').value;
-        const email = document.getElementById('customerEmail').value;
-        const subs = document.getElementById('costumerSubscribe').value;
+        const name = document.getElementById('name').value;
+        const todostitle = document.getElementById('todostitle').value;
+        const todosstatus = document.getElementById('status').value;
+        const posttitle = document.getElementById('posttitle').value;
+        const posttext = document.getElementById('posttext').value;
 
         if (currentId) {
-            updateCustomer(currentId, name, email, subs);
+            updateCustomer(currentId, name, todostitle, todosstatus, posttitle, posttext);
         } else {
-            addCustomer(name, email, subs);
+            addCustomer(name, todostitle, todosstatus, posttitle, posttext);
         }
 
         resetForm();
@@ -34,10 +36,12 @@ function renderTable() {
         const row = tableBody.insertRow();
         row.insertCell(0).innerText = customer.id;
         row.insertCell(1).innerText = customer.name;
-        row.insertCell(2).innerText = customer.email;
-        row.insertCell(3).innerText = customer.subs;
+        row.insertCell(2).innerText = customer.todostitle;
+        row.insertCell(3).innerText = customer.todosstatus;
+        row.insertCell(4).innerText = customer.posttitle;
+        row.insertCell(5).innerText = customer.posttext;
 
-        const actionCell = row.insertCell(3);
+        const actionCell = row.insertCell(6);
         const editButton = document.createElement('button');
         editButton.innerText = 'Edit';
         editButton.onclick = () => editCustomer(customer);
@@ -52,12 +56,14 @@ function renderTable() {
 }
 
 // Tambah Pelanggan
-function addCustomer(name, email, subs) {
+function addCustomer(name, todostitle, todosstatus, posttitle, posttext) {
     const newCustomer = {
         id: customers.length ? Math.max(...customers.map(c => c.id)) + 1 : 1, // Menggunakan ID yang unik
         name: name,
-        email: email,
-        subs :subs
+        todostitle: todostitle,
+        todosstatus :todosstatus,
+        posttitle :posttitle,
+        posttext : posttext
     };
     customers.push(newCustomer);
     renderTable();
@@ -65,18 +71,22 @@ function addCustomer(name, email, subs) {
 // Edit data pelanggan
 function editCustomer(customer) {
     document.getElementById('customerId').value = customer.id;
-    document.getElementById('customerName').value = customer.name;
-    document.getElementById('customerEmail').value = customer.email;
-    document.getElementById('costumerSubscribe').value = customer.subs;
+    document.getElementById('name').value = customer.name;
+    document.getElementById('todostitle').value = customer.todostitle;
+    document.getElementById('status').value = customer.todosstatus;
+    document.getElementById('posttitle').value = customer.posttitle;
+    document.getElementById('posttext').value = customer.posttext;
     currentId = customer.id;
 }
 
-function updateCustomer(id, name, email,subs) {
+function updateCustomer(id, name, todostitle, todosstatus, posttitle, posttext) {
     const index = customers.findIndex(customer => customer.id === id);
     if (index !== -1) {
         customers[index].name = name;
-        customers[index].email = email;
-        customers[index].subs = subs;
+        customers[index].todostitle = todostitle;
+        customers[index].todosstatus = todosstatus;
+        customers[index].posttitle = posttitle;
+        customers[index].posttext = posttext;
         renderTable();
     }
 }
@@ -107,12 +117,14 @@ function renderTable() {
 // Data ditempatkan di cell yang sesuai
   customers.forEach(customer => {
       const row = tableBody.insertRow();
-      row.insertCell(0).innerText = customer.id;
-      row.insertCell(1).innerText = customer.name;
-      row.insertCell(2).innerText = customer.email;
-      row.insertCell(3).innerText = customer.subs;
+        row.insertCell(0).innerText = customer.id;
+        row.insertCell(1).innerText = customer.name;
+        row.insertCell(2).innerText = customer.todostitle;
+        row.insertCell(3).innerText = customer.todosstatus;
+        row.insertCell(4).innerText = customer.posttitle;
+        row.insertCell(5).innerText = customer.posttext;
 
-      const actionCell = row.insertCell(4);
+      const actionCell = row.insertCell(6);
     //Tombol edit pelanggan
       const editButton = document.createElement('button');
       editButton.innerText = 'Edit';
