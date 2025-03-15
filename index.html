@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icons/netflix-logo-icon.svg" type="image/png">
+    <title>Website-TestProgram</title>
+    <!-- Css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Data User Netflix</h1>
+        
+        <!-- Form Input Data Pelanggan -->
+        <form id="customerForm">
+            <input type="hidden" id="customerId">
+            <input type="text" id="customerName" placeholder="Nama" required>
+            <input type="email" id="customerEmail" placeholder="Email" required>
+            <select id="costumerSubscribe" name="costumerSubscribe" required>
+                <option value="" disabled selected>Pilih Tipe Subscribe</option>
+                <option value="basic">Basic</option>
+                <option value="standard">Standard</option>
+                <option value="premium">Premium</option>
+            </select>
+            <button type="submitButton" class="save-button">Simpan</button>
+        </form>
+      
+        <!-- Tabel Data Pelanggan -->
+        <table id="customerTable">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th>Subscription</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data pelanggan dari data.json akan ditampilkan di sini -->
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

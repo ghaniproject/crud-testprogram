@@ -1,0 +1,95 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #141414;
+  color: white;
+  margin: 0;
+  padding: 20px;
+  
+}
+
+.container {
+  background-color: #333; /* Warna latar belakang form */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+form {
+  display: flex;
+  flex-direction: column; /* Mengubah arah flex menjadi kolom */
+  margin-bottom: 30px;
+}
+
+input[type="text"],
+input[type="email"] {
+  padding: 10px;
+  margin-bottom: 10px; /* Memberikan jarak antara input */
+  border: none;
+  border-radius: 5px;
+  width: 30%;
+  
+}
+
+select, label{
+  display: flex;
+  padding: 10px;
+  margin-bottom: 10px; /* Memberikan jarak antara input */
+  border: none;
+  border-radius: 5px;
+  width: 15%;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 10%z;
+}
+
+button.action {
+  margin-right: 10px; /* Memberikan jarak antara tombol */
+  
+}
+
+button.save-button {
+  padding: 10px 20px;
+  background-color: #e50914; /* Gaya untuk tombol simpan */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 7%;
+  text-align: center;
+  
+}
+
+label{
+  padding: 0px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
+
+th {
+  background-color: #e50914;
+}
+
+button.delete {
+  background-color: #f44336;
+
+}
